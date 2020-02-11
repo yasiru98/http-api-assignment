@@ -15,8 +15,9 @@
       else{
         let parser = new DOMParser();
         let xmlResponse = parser.parseFromString(xhr.response,"text/xml");
-    
-        message = xmlResponse.getElementsByTagName("message").textContent;
+        //console.log(xmlResponse)
+        message = xmlResponse.getElementsByTagName("message")[0].childNodes[0].nodeValue;
+        console.log(message)
       }
       
       switch (xhr.status) {
@@ -64,8 +65,9 @@
         const page = document.querySelector("#page");
         const type = document.querySelector("#type");
         const sendButton = document.querySelector("#send");
-
+     
         sendButton.addEventListener('click', () =>{
+          console.log(type.value);
           sendAjax(page.value, type.value);
         });
 

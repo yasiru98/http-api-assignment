@@ -18,7 +18,7 @@ const respond = (request, response, status, content, contentTypes) => {
   response.end();
 };
 
-const success = (request, response, acceptedTypes) => {
+const success = (request, response, params, acceptedTypes) => {
   const responseJSON = {
     message: 'This is a successful response',
   };
@@ -66,7 +66,7 @@ const unauthorized = (request, response, params, acceptedTypes) => {
     return respond(request, response, 200, responseJSON, acceptedTypes);
   };
 
-const forbidden = (request, response, acceptedTypes) => {
+const forbidden = (request, response, params, acceptedTypes) => {
 
   const responseJSON = {
     message: 'You do not have access to this content.',
@@ -77,7 +77,7 @@ const forbidden = (request, response, acceptedTypes) => {
   respond(request, response, 403, responseJSON, acceptedTypes);
 };
 
-const internal = (request, response, acceptedTypes) => {
+const internal = (request, response, params, acceptedTypes) => {
 
     const responseJSON = {
       message: 'Internal Server Error. Something went wrong.',
@@ -88,7 +88,7 @@ const internal = (request, response, acceptedTypes) => {
     respond(request, response, 500, responseJSON, acceptedTypes);
   };
 
-const notImplemented = (request, response, acceptedTypes) => {
+const notImplemented = (request, response, params, acceptedTypes) => {
 
   const responseJSON = {
     message: 'A get request for this page has not been implemented yet. Check again later for updated content.',
@@ -99,7 +99,7 @@ const notImplemented = (request, response, acceptedTypes) => {
   respond(request, response, 501, responseJSON, acceptedTypes);
 };
 
-const notFound = (request, response, acceptedTypes) => {
+const notFound = (request, response, params, acceptedTypes) => {
 
   const responseJSON = {
     message: 'The page you are looking for was not found.',
