@@ -9,7 +9,7 @@
     "test": "echo \"Tests complete\""
   },
   "engines": {
-    "node": "12.14.1",
+    "node": "10.16.0",
     "npm": "6.13.4"
   },
   "repository": {
